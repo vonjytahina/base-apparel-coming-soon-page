@@ -1,0 +1,237 @@
+/* import font family*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+/* colors */
+:root {
+  --primary-desaturated-red: hsl(0, 36%, 70%);
+  --primary-soft-red: hsl(0, 93%, 68%);
+
+  --neutral-dark-grayish-red: hsl(0, 6%, 24%);
+
+  --gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%);
+  --gradient-two: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%);
+}
+
+/* global style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+}
+
+/* container */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+}
+
+.container .mobile-logo {
+  display: none;
+}
+
+.container .left {
+  width: 830px;
+  height: 800px;
+  background: url('images/bg-pattern-desktop.svg');
+  background-size: 100% 100%;
+  padding-top: 65px;
+  padding-left: 165px;
+  padding-right: 220px;
+}
+
+.container .left .title {
+  margin-top: 140px;
+  margin-bottom: 40px;
+}
+
+.container .left .title p {
+  font-size: 62px;
+  text-transform: uppercase;
+  letter-spacing: 18px;
+  line-height: 66px;
+}
+
+.container .left .title p.we {
+  font-weight: 300;
+  color: var(--primary-desaturated-red);
+}
+
+.container .left .title p.coming {
+  font-weight: 600;
+  color: var(--neutral-dark-grayish-red);
+}
+
+.container .left .text {
+  color: var(--primary-desaturated-red);
+  line-height: 26px;
+  margin-bottom: 50px;
+}
+
+.container .right {
+  width: 610px;
+  height: 800px;
+  background: url('images/hero-desktop.jpg');
+  background-size: 100% 100%;
+}
+
+.container .input-container {
+  width: 100%;
+  height: 58px;
+  position: relative;
+  background: linear-gradient(135deg, #ece6e6 0%, #dbc8cc 100%);
+  border-radius: 30px;
+}
+
+.container .input-container input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 99%;
+  height: 55px;
+  padding-left: 30px;
+  z-index: 2;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  color: var(--neutral-dark-grayish-red);
+  font-weight: 600;
+}
+
+.container .input-container input::placeholder {
+  color: #e3cecd;
+}
+
+.container .input-container .error {
+  position: absolute;
+  top: 50%;
+  right: 26%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: none;
+}
+
+.container .input-container .submit {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 100px;
+  height: 100%;
+  border-radius: 30px;
+  background: var(--gradient-two);
+  z-index: 3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 10px 20px 7px rgba(236, 202, 203, 0.5);
+  transition: all .3s ease-in-out;
+}
+
+.container .input-container .submit:hover {
+  box-shadow: 0px 10px 20px 7px rgba(236, 202, 203, 1);
+  background: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 80%, 86%) 100%);
+  ;
+}
+
+.container .text-error {
+  color: var(--primary-soft-red);
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 14px;
+  display: none;
+}
+
+.attribution {
+  margin: 20px auto;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  font-size: 11px;
+  color: hsl(228, 45%, 44%);
+}
+
+/* responsive */
+@media screen and (max-width: 1240px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .left {
+    order: 3;
+  }
+
+  .container .right {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .mobile-logo {
+    display: block;
+    max-width: 375px;
+    width: 100%;
+    height: 85px;
+    order: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .container .left {
+    max-width: 375px;
+    width: 100%;
+    height: 465px;
+    order: 2;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .container .left .title {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .container .left .title p {
+    font-size: 42px;
+    letter-spacing: 10px;
+    line-height: 46px;
+  }
+
+  .container .left .text {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0px 20px;
+  }
+
+  .container .input-container .error {
+    right: 30%;
+  }
+
+  .container .left>svg {
+    display: none;
+  }
+
+  .container .right {
+    order: 1;
+    max-width: 375px;
+    width: 100%;
+    height: 250px;
+    background: url('images/hero-mobile.jpg');
+    background-size: 100% 100%;
+  }
+}
